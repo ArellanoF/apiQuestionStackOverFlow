@@ -7,6 +7,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- Navbar -->
@@ -42,6 +43,7 @@
                             <h2 class="mb-0">
                                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseResults" aria-expanded="true" aria-controls="collapseResults">
                                     {{ count($result['items']) }} Results
+                                    <i id="collapseIcon" class="fas fa-chevron-down float-right"></i>
                                 </button>
                             </h2>
                         </div>
@@ -73,4 +75,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+<script>
+    $('#collapseResults').on('shown.bs.collapse', function () {
+        $('#collapseIcon').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+    });
+
+    $('#collapseResults').on('hidden.bs.collapse', function () {
+        $('#collapseIcon').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+    });
+</script>
+
 </html>
