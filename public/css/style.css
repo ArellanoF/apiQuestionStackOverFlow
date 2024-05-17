@@ -1,0 +1,18 @@
+.container-form{
+    max-width: 600px;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 1rem;
+}
+
+/* En tu archivo CSS */
+.bg-light-grey {
+    background-color: #f8f9fa;
+}
+
+.bg-dark-grey {
+    background-color: #e9ecef;
+}
+a{
+    color: #4F4F55;
+}
