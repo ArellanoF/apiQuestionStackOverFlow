@@ -48,6 +48,12 @@ html, body {
     width: 100%;
 }
 #extra-info {
+    font-size: 0.8rem;
+    color: #828285;
+}
+#extra-info-question {
+    font-size: 0.8rem;
+    color: #272729;
 }
 .btn:focus {
     outline: 0;

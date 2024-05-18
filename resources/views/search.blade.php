@@ -8,6 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="https://www.factorenergia.com/wp-content/uploads/2016/05/cropped-favicon512-32x32.png" sizes="32x32" />
 </head>
 @php
     use Carbon\Carbon;
@@ -49,10 +50,12 @@
                     <div class="card">
                         <div class="card-header" id="headingResults">
                             <h2 class="mb-0">
+                                <div class="row">
                                 <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseResults" aria-expanded="true" aria-controls="collapseResults">
-                                    {{ count($result['items']) }} Results
-                                    <i id="collapseIcon" class="fas fa-chevron-down float-right"></i>
+                                        Total results: {{ count($result['items']) }} <span id="tagged-info">(max:100)</span>    
+                                        <i id="collapseIcon" class="fas fa-chevron-down float-right mt-1"></i>                               
                                 </button>
+                            </div>
                             </h2>
                         </div>
 
@@ -67,14 +70,14 @@
                                     @endphp
                                         <li class="list-group-item {{ $index % 2 == 0 ? 'bg-light' : 'bg-white' }}">
                                             <img style="width: 30px;height: 30px;" src="https://proyectosbeta.net/wp-content/uploads/2016/10/Logo-StackOverFlow.png">
-                                            <a href="{{ $item['link'] }}">- {{ $item['title'] }}</a><br>
+                                            <a href="{{ $item['link'] }}" target="_blank">- {{ $item['title'] }}</a><br>
                                             @foreach ($item['tags'] as $tag)
                                             <span class="badge bg-info mb-2 mt-2"><a href="https://stackoverflow.com/questions/tagged/{{$tag}}" target="_blank">{{$tag}}</a></span>
                                             @endforeach
                                             <br>
-                                            <span id="extra-info"> Creation:{{$creation}}</span>
-                                            <span id="extra-info"> Modified:{{$modified}}</span>   
-                                            <span id="extra-info">  Score: {{$item['score']}}</span>
+                                            <span id="extra-info"> Creation:</span><span id="extra-info-question">{{$creation}}</span>
+                                            <span id="extra-info"> Modified:</span><span id="extra-info-question">{{$modified}}</span>
+                                            <span id="extra-info">  Score: </span><span id="extra-info-question">{{$item['score']}}</span>
                                         </li>
                                     @endforeach
                                 </ul>
