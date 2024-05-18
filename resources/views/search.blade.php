@@ -19,23 +19,27 @@
         <a class="navbar-brand" href="https://www.factorenergia.com/es/" target="_blank">
             <img src="https://www.factorenergia.com/wp-content/themes/factorenergia/assets/img/logo-factorenergia-lupa.png" width="140" height="50" class="d-inline-block align-top" alt="">
         </a>
+        <div class="ml-auto">
+            <a href="/"><button class="btn mr-3" style="background-color: #262699;
+                color: white;">Home</button></a>
+        </div>
     </nav>
     <div class="container mt-5 container-form">
         <h2 class="mb-4">Search question Stack Overflow</h2>
         <form id="searchForm" action="/search/results" method="GET">
             <div class="form-group">
                 <label for="tagged">Tagged:</label>
-                <input type="text" id="tagged" name="tagged" class="form-control" required>
+                <input type="text" id="tagged" name="tagged" class="form-control" required value="{{ isset($_GET['tagged']) ? $_GET['tagged'] : '' }}">
                 <span id="tagged-info">**Use the tagged parameter with a semi-colon delimited list of tags. This is an and constraint, passing tagged=c;java will return only those questions with both tags. As such, passing more than 5 tags will always return zero results.</span>
             </div>
             <div class="row">
                 <div class="form-group col-sm-6">
                     <label for="fromDate">From Date:</label>
-                    <input type="date" id="fromDate" name="fromDate" class="form-control">
+                    <input type="date" id="fromDate" name="fromDate" class="form-control" value="{{ isset($_GET['fromDate']) ? $_GET['fromDate'] : '' }}">
                 </div>
                 <div class="form-group col-sm-6">
                     <label for="toDate">To Date:</label>
-                    <input type="date" id="toDate" name="toDate" class="form-control">
+                    <input type="date" id="toDate" name="toDate" class="form-control" value="{{ isset($_GET['toDate']) ? $_GET['toDate'] : '' }}">
                 </div>
                 </div>
                 <div class="row justify-content-center">
@@ -90,6 +94,11 @@
                     No questions found.
                 </div>
             @endif
+        @endif
+        @if (isset($error))
+        <div class="alert alert-warning mt-4" role="alert">
+            API error
+        </div>
         @endif
     </div>
         <!-- Footer -->

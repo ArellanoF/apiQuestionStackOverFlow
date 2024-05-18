@@ -61,7 +61,8 @@ class StackOverflowController extends Controller
 
                 $result = $response->json();
             } else {
-                return response()->json(['error' => 'Error fetching data from Stack Overflow API'], 500);
+               $error = response()->json(['error' => 'Error fetching data from Stack Overflow API'], 500);
+               return view('search', ['error' => $error]);
             }
         }
 
