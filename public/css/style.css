@@ -1,4 +1,4 @@
-.container-form{
+.container-form {
     max-width: 600px;
     padding: 2rem;
     background: #f8f9fa;
@@ -13,6 +13,59 @@
 .bg-dark-grey {
     background-color: #e9ecef;
 }
-a{
-    color: #4F4F55;
+a {
+    color: #4f4f55;
+}
+span>a{
+    color:white;
+}
+
+#collapseResults {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+#tagged-info {
+    font-size: 10px;
+    font-style: italic;
+    color: #878789;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+}
+.content {
+    flex: 1;
+}
+.fixed-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+#extra-info {
+}
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.125);
+}
+.btn-link {
+    color:#212529;
+}
+.btn-link:focus {
+    text-decoration: none;
+}
+.btn-link:hover {
+    text-decoration: none;
+}
+.card {
+    display: block;
+    margin-bottom: 10rem;
+}
+.accordion>.card>.card-header {
+    margin-bottom: 0;
 }
