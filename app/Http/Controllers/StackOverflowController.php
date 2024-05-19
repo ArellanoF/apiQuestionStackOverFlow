@@ -29,8 +29,9 @@ class StackOverflowController extends Controller
         if ($existingPetition) {
             // Si se encuentra una consulta existente, mostrar su resultado almacenado
             $result = $existingPetition->response;
-  
+
         } else {
+
             // Si no se encuentra una consulta existente, realizar la consulta a la API
             $queryParams = [
                 'order' => 'desc',

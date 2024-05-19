@@ -34,11 +34,11 @@
             </div>
             <div class="row">
                 <div class="form-group col-sm-6">
-                    <label for="fromDate">From Date:</label>
+                    <label for="fromDate">From:</label>
                     <input type="date" id="fromDate" name="fromDate" class="form-control" value="{{ isset($_GET['fromDate']) ? $_GET['fromDate'] : '' }}">
                 </div>
                 <div class="form-group col-sm-6">
-                    <label for="toDate">To Date:</label>
+                    <label for="toDate">To:</label>
                     <input type="date" id="toDate" name="toDate" class="form-control" value="{{ isset($_GET['toDate']) ? $_GET['toDate'] : '' }}">
                 </div>
                 </div>
