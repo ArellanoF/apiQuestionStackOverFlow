@@ -36,7 +36,7 @@ php artisan migrate
 7. Start the development server:
 php artisan serve
 
-8. Visit http://localhost:8000/search in your browser to view the application.
+8. Visit http://localhost:8000/ in your browser to view the application.
 
 ## Use
 - On the http://localhost:8000/search page, enter the search tags and optionally the start and end dates.
