@@ -1,21 +1,21 @@
-# Laravel StackOverflow Search
-:desktop_computer:
+# Laravel StackOverflow Search :desktop_computer:
+
 
 This Laravel project provides an interface to search questions on Stack Overflow using its public API.
 
-## Features
+## Features :pushpin:
 
 - **Question Search:** Users can search for questions on Stack Overflow by providing optional tags and dates.
 - **Cache Storage:** Repeated queries are stored in the database to avoid redundant calls to the Stack Overflow API.
 - **Responsive User Interface:** The user interface adapts to mobile and desktop devices.
 
-## System Requirements
+## System Requirements :triangular_flag_on_post:
 
 - PHP >= 7.3
 - Composer
 - MySQL
 
-## Facility
+## Facility :checkered_flag:
 
 1. Clone this repository to your local machine:
 *git clone https://github.com/ArellanoF/apiQuestionStackOverFlow*
@@ -38,7 +38,7 @@ This Laravel project provides an interface to search questions on Stack Overflow
 
 8. Visit http://localhost:8000/ in your browser to view the application.
 
-## Use
+## Use :fountain_pen:
 - On the http://localhost:8000/search page, enter the search tags and optionally the start and end dates.
 - Click the "Search" button to search for questions on Stack Overflow.
 - The results will be shown in the collapse.
