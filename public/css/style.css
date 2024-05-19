@@ -75,3 +75,6 @@ html, body {
 .accordion>.card>.card-header {
     margin-bottom: 0;
 }
+.badge> a:hover{
+    color: #F3F3F0;
+}
