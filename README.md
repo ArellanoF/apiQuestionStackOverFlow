@@ -1,4 +1,5 @@
 # Laravel StackOverflow Search
+:desktop_computer:
 
 This Laravel project provides an interface to search questions on Stack Overflow using its public API.
 
@@ -17,24 +18,23 @@ This Laravel project provides an interface to search questions on Stack Overflow
 ## Facility
 
 1. Clone this repository to your local machine:
-
-git clone https://github.com/ArellanoF/apiQuestionStackOverFlow
+*git clone https://github.com/ArellanoF/apiQuestionStackOverFlow*
 
 2. Navigate to the project directory:
 
 3. Install PHP dependencies with Composer:
-composer install
+*composer install*
 
 4. Copy the .env.example file and rename it to .env:
 
 5. Generate a new application key:
-php artisan key:generate
+*php artisan key:generate*
 
 6. Run the migrations to create the database tables:
-php artisan migrate
+*php artisan migrate*
 
 7. Start the development server:
-php artisan serve
+*php artisan serve*
 
 8. Visit http://localhost:8000/ in your browser to view the application.
 

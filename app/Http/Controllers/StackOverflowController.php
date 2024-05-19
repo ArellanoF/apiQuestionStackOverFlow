@@ -21,24 +21,24 @@ class StackOverflowController extends Controller
         $fromDate = $request->input('fromDate');
         $toDate = $request->input('toDate');
 
-        // Crear una instancia del modelo Petition
+        // Create an instance of the Petition model
         $petition = new Petition();
 
         $existingPetition = $petition->searchOrCreate($tagged, $fromDate, $toDate);
 
         if ($existingPetition) {
-            // Si se encuentra una consulta existente, mostrar su resultado almacenado
+           // If an existing query is found, display its stored result in the BBDD
             $result = $existingPetition->response;
 
         } else {
 
-            // Si no se encuentra una consulta existente, realizar la consulta a la API
+            // If no existing query is found, query the API
             $queryParams = [
                 'order' => 'desc',
                 'sort' => 'activity',
                 'tagged' => $tagged,
                 'site' => 'stackoverflow',
-                'pagesize' => 100, //máximo que devuelve la api
+                'pagesize' => 100, //maximum returned by the api
             ];
 
             if ($fromDate) {
@@ -52,7 +52,7 @@ class StackOverflowController extends Controller
             $response = Http::get('https://api.stackexchange.com/2.3/questions', $queryParams);
 
             if ($response->successful()) {
-                // Guardar la consulta y la respuesta en la base de datos
+                // Save the response to the database
                 Petition::create([
                     'tagged' => $tagged,
                     'response' => $response->json(),
@@ -67,7 +67,7 @@ class StackOverflowController extends Controller
             }
         }
 
-        // Devolver el resultado al cliente, ya sea de la base de datos o de la API
+        // Return the result to the client, either from the database or the API
         return view('search', ['result' => $result]);
     }
 }

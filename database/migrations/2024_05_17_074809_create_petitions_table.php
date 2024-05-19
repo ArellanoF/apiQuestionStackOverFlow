@@ -15,7 +15,7 @@ class CreatePetitionsTable extends Migration
     {
         Schema::create('petitions', function (Blueprint $table) {
             $table->id();
-            $table->string('tagged')->unique();;
+            $table->string('tagged');
             $table->json('response');
             $table->timestamps();
         });
