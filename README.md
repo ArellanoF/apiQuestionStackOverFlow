@@ -5,7 +5,6 @@ This Laravel project provides an interface to search questions on Stack Overflow
 ## Features
 
 - **Question Search:** Users can search for questions on Stack Overflow by providing optional tags and dates.
-- **Paginated Results:** The results are displayed in pages of 20 questions per page.
 - **Cache Storage:** Repeated queries are stored in the database to avoid redundant calls to the Stack Overflow API.
 - **Responsive User Interface:** The user interface adapts to mobile and desktop devices.
 
@@ -20,6 +19,7 @@ This Laravel project provides an interface to search questions on Stack Overflow
 1. Clone this repository to your local machine:
 
 git clone https://github.com/ArellanoF/apiQuestionStackOverFlow
+
 2. Navigate to the project directory:
 
 3. Install PHP dependencies with Composer:
